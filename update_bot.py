@@ -1,8 +1,8 @@
 import os
 import json
 import tweepy
+import requests
 
-from forex_python.converter import CurrencyRates
 from decouple import config
 
 consumer_key = config('consumer_key')
@@ -23,14 +23,17 @@ config_file.close()
 pokemons_file = open('pokedex.json', 'r')
 pokemon = json.load(pokemons_file)
 
-currency_rates = CurrencyRates()
-dolar_real = str(round(currency_rates.get_rate('USD','BRL'), 2))
+
+uol_quote = requests.get('http://cotacoes.economia.uol.com.br/cambioJSONChart.html?type=d&cod=BRL&mt=off')
+dolar_json = json.loads(uol_quote.content)
+dolar_real = "{:.2f}".format(dolar_json[1][-1]['ask'])
 
 data = {}
 subiu = False
 first_tweet = False
+data['exchange'] = dolar_real
 if 'exchange' in config:
-    data['exchange'] = config['exchange']
+    
     if data['exchange'] == dolar_real:
         tweet = False
     else:
@@ -40,7 +43,6 @@ if 'exchange' in config:
         data['exchange'] = dolar_real
 
 else:
-    data['exchange'] = dolar_real
     tweet = True
     first_tweet = True
 if tweet:
@@ -62,3 +64,5 @@ if tweet:
     api.update_with_media(imagepath, status)
     config_file = open('config.json', 'w')
     json.dump(data, config_file)
+else:
+    print("Não mudou {}".format(data['exchange']))
