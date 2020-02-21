@@ -5,8 +5,9 @@ Tweets the current exchange rate from BRL to USD
 Usage
  - Install requirements
     - `pip3 install requirements.txt`
- - Setup .env
+ - Setup .env and config
     - `cp .env.example .env`
+    - `cp example_config.json config.json`
     - Add your keys to .env
  - Add each pokemon image to a folder
     - `mkdir pokemon_img`
@@ -17,4 +18,4 @@ Usage
 # Special Thanks
 [@garotilde](https://twitter.com/garotilde) for the idea.
 
-[pokemon.json](https://github.com/fanzeyi/pokemon.json) from [@fanzeyi](https://github.com/fanzeyi) for the pokedex.json file
+[pokemon.json](https://github.com/fanzeyi/pokemon.json) from [@fanzeyi](https://github.com/fanzeyi) for the pokedex.json file and pictures
