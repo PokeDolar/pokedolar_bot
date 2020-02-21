@@ -15,5 +15,6 @@ Usage
 
 
 # Special Thanks
-    [@garotilde](https://twitter.com/garotilde) for the idea.
-    [pokemon.json](https://github.com/fanzeyi/pokemon.json) from [@fanzeyi](https://github.com/fanzeyi) for the pokedex.json file
+[@garotilde](https://twitter.com/garotilde) for the idea.
+
+[pokemon.json](https://github.com/fanzeyi/pokemon.json) from [@fanzeyi](https://github.com/fanzeyi) for the pokedex.json file
