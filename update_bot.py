@@ -17,8 +17,6 @@ api = tweepy.API(auth)
 user = api.me()
 
 config_file = open('config.json', 'r')
-if config_file:
-    print("hmm")
 config = json.load(config_file)
 config_file.close()
 
