@@ -34,11 +34,11 @@ first_tweet = False
 data['exchange'] = dolar_real
 if 'exchange' in config:
     
-    if data['exchange'] == dolar_real:
+    if config['exchange'] == dolar_real:
         tweet = False
     else:
         tweet = True
-        if float(data['exchange']) < float(dolar_real):
+        if float(config['exchange']) < float(dolar_real):
             subiu = True
         data['exchange'] = dolar_real
 
@@ -55,7 +55,7 @@ if tweet:
         if subiu:
             status_template = "O dólar subiu para R${} :(\n\n #{} - {}"
         else:
-            status_template = "O dólar caiu para R${} :()\n\n #{} - {}"
+            status_template = "O dólar caiu para R${} :)\n\n #{} - {}"
     else:
         status_template = "quanto tá o pokédólar? R${}\n\n #{} - {}"
     
@@ -65,4 +65,11 @@ if tweet:
     config_file = open('config.json', 'w')
     json.dump(data, config_file)
 else:
+    config_file = open('config.json', 'w')
+    
+    last_read = "{}".format(dolar_json[1][-1]['ask'])
+
+    data['last_read'] = last_read
+    json.dump(data, config_file)
+
     print("Não mudou {}".format(data['exchange']))
