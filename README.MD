@@ -14,7 +14,8 @@ Usage
  - Run update_bot.py
     - `python3 update_bot.py`
 
-
+# Account
+Follow the bot at [@PokeDolar](https://twitter.com/PokeDolar)
 # Special Thanks
 [@garotilde](https://twitter.com/garotilde) for the idea.
 
