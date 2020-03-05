@@ -55,7 +55,7 @@ if tweet:
         if subiu:
             status_template = "O dólar subiu para R${} :(\n\n #{} - {}"
         else:
-            status_template = "O dólar caiu para R${} :)\n\n #{} - {}"
+            status_template = "O dólar caiu para R${}\n\n #{} - {}"
     else:
         status_template = "quanto tá o pokédólar? R${}\n\n #{} - {}"
     
