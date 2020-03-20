@@ -4,6 +4,7 @@ import tweepy
 import requests
 
 from decouple import config
+from emojis import sad_emoji, happy_emoji
 
 consumer_key = config('consumer_key')
 consumer_secret = config('consumer_secret')
@@ -51,16 +52,19 @@ if tweet:
     name = pokemon[pokeid-1]['name']['english']
     
     imagepath = 'pokemon_img/{}.png'.format(pokeid)
+    emoji = ''
     if not first_tweet:
         if subiu:
-            status_template = "O dólar subiu para R${} :(\n\n #{} - {}"
+            status_template = "O dólar subiu para R${} {}\n\n #{} - {}"
+            emoji = sad_emoji()
         else:
-            status_template = "O dólar caiu para R${}\n\n #{} - {}"
+            status_template = "O dólar caiu para R${} {}\n\n #{} - {}"
+            emoji = happy_emoji()
     else:
         status_template = "quanto tá o pokédólar? R${}\n\n #{} - {}"
     
     
-    status = status_template.format(dolar_real, pokeid, name)
+    status = status_template.format(dolar_real, emoji, pokeid, name)
     api.update_with_media(imagepath, status)
     config_file = open('config.json', 'w')
     json.dump(data, config_file)
