@@ -17,6 +17,6 @@ Usage
 # Account
 Follow the bot at [@PokeDolar](https://twitter.com/PokeDolar)
 # Special Thanks
-[@garotilde](https://twitter.com/garotilde) and [Pokedollar-FB](https://www.facebook.com/pokedollar) for the idea.
+[@pedriques_site](https://twitter.com/pedriques_site) and [Pokedollar-FB](https://www.facebook.com/pokedollar) for the idea.
 
 [pokemon.json](https://github.com/fanzeyi/pokemon.json) from [@fanzeyi](https://github.com/fanzeyi) for the pokedex.json file and pictures
