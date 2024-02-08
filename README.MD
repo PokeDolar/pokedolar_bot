@@ -1,3 +1,7 @@
+# Deprecated
+
+The current version can be found [here](https://github.com/PokeDolar)
+
 # Pokédolar Twitter bot
 
 Tweets the current exchange rate from BRL to USD
